@@ -1,0 +1,11 @@
+{
+  "name": "mutest",
+  "version": "0.0.1",
+  "description": "web-application for ESL teachers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danil 'ADDeu' Deulin addeulin@gmail.com",
+  "license": "Apache-2.0"
+}

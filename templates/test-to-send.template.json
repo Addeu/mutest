@@ -1,0 +1,17 @@
+// This is a twmplate of a test after being uploaded and pre-processed
+
+{
+  "name": "test-name",
+  "serial number": "0000",
+  "questions": [
+    {"question 1":
+       { "prompt": "prompt",
+         "optionA": "option a",
+         "optionB": "option b",
+         "optionC": "option c",
+         "optionD": "option d",
+         "rightAnswer": "right answer"
+       }
+    }
+   ]
+  }
