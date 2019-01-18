@@ -1,5 +1,8 @@
 # folders to ignore
 /node_modules
+/uploads
 
 #file extensions to ignore
 *.txt
+
+#files to ignore
