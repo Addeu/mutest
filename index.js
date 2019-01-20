@@ -19,8 +19,8 @@ const upload = multer({storage: storage});
 
 //Server
 app.use(express.static(usrPath));
-app.post('/index.html', upload.single('quiz'), (req, res) => {
-  res.sendStatus('200!');
+app.post('/upload', upload.single('quiz'), (req, res) => {
+  req.end();
 });
 
 app.listen(port, (err) => {
