@@ -1,17 +1,26 @@
-//Here the app begins
+//Importing modules & variables
 const express = require('express');
 const path = require('path');
-const exphbs = require('express-handlebars');
-const fs = require('file-system');
-const text = fs.readFileSync(`test.txt`, `utf8`);
+const multer = require('multer');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+const usrPath = path.join(__dirname, 'public');
 
+//Storage settings
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './uploads')
+  },
+  filename: function(req, file, cb) {
+    cb(null, file.fieldname + '.txt')
+  }
+});
+const upload = multer({storage: storage});
 
-app.get('/', (request, response) => {
-  response.render('t-upload', {
-    here: text
-  })
+//Server
+app.use(express.static(usrPath));
+app.post('/index.html', upload.single('quiz'), (req, res) => {
+  res.sendStatus('200!');
 });
 
 app.listen(port, (err) => {
@@ -21,12 +30,3 @@ app.listen(port, (err) => {
 
   console.log(`server is listening on port ${port}`);
 });
-
-app.engine('.hbs', exphbs ({
-  defaultLayout: 'main',
-  extname: '.hbs',
-  layoutsDir: path.join(__dirname, 'views/layouts')
-}))
-
-app.set('view engine', '.hbs');
-app.set('views', path.join(__dirname, 'views'));
