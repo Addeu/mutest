@@ -5,16 +5,4 @@
 
 .container {
   margin: 10vh auto;
-  width: 90%;
-  height: 70vh;
-  border: 5px solid blue;
-}
-
-h1 {
-  text-align: center;
-}
-
-.send-test {
-  margin: 10% 40%;
-
 }

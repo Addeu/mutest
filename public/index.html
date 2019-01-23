@@ -2,16 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Mutest Rewritten</title>
-    <link rel="stylesheet" href="/master.css">
+    <title>Mutest v0.0.3</title>
   </head>
   <body>
     <div class="container">
-      <h1>You may upload your test here</h1>
-      <form class="send-test" action="index.html" method="post" enctype="multipart/form-data">
-        <input type="file" name="quiz">
-        <button type="submit" name="submit">Submit</button>
-      </form>
+      <div class="input">
+        <form class="quiz-upload" action="/upload" method="post" enctype="multipart/form-data">
+          <input type="file" name="quiz" value="">
+          <button type="submit" name="button">Submit</button>
+          <button type="button" name="button">Create a Quizz</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
