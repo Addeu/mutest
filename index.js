@@ -10,8 +10,10 @@ const usrPath = path.join(__dirname, 'public');
 
 
 //Server
-app.use('/uploads', appRouter);
+
 app.use(express.static(usrPath));
+app.use(appRouter);
+
 
 
 app.listen(port, (err) => {
