@@ -1,7 +1,7 @@
 //Importing modules & variables
 const express = require('express');
 const path = require('path');
-const appRouter = require('./routes/routes');
+const appRouter = require('./routes/routes.js');
 const app = express();
 const port = process.env.PORT || 3000;
 const usrPath = path.join(__dirname, 'public');
@@ -12,7 +12,7 @@ const usrPath = path.join(__dirname, 'public');
 //Server
 
 app.use(express.static(usrPath));
-app.use(appRouter);
+app.use('/api', appRouter);
 
 
 
@@ -23,3 +23,5 @@ app.listen(port, (err) => {
 
   console.log(`server is listening on port ${port}`);
 });
+
+module.exports = usrPath;
