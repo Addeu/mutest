@@ -6,3 +6,20 @@
 .container {
   margin: 10vh auto;
 }
+
+.holder {
+  margin: 10% auto;
+  height: 20vh;
+  width: 80%;
+  border: solid blue 5px;
+}
+
+.btn {
+  padding: 10px;
+
+}
+#prompting {
+  padding: 10px;
+  display: block;
+  font-style: italic;
+}
