@@ -2,7 +2,7 @@
   "name": "mutest",
   "version": "0.1.0",
   "description": "web-application for ESL teachers",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
@@ -13,8 +13,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "file-system": "^2.2.2",
-    "handlebars": "^4.0.12",
     "multer": "^1.4.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "serve-favicon": "^2.5.0"
   }
 }

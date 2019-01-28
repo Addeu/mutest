@@ -1,6 +1,7 @@
 # folders to ignore
 /node_modules
 /uploads
+/templates
 
 #file extensions to ignore
 *.txt

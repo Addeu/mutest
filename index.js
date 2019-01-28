@@ -5,15 +5,12 @@ const appRouter = require('./routes/routes.js');
 const app = express();
 const port = process.env.PORT || 3000;
 const usrPath = path.join(__dirname, 'public');
-
-//Storage settings
-
+const favicon = require('serve-favicon');
 
 //Server
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(usrPath));
 app.use('/api', appRouter);
-
 
 
 app.listen(port, (err) => {
