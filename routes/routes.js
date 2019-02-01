@@ -22,6 +22,9 @@ router.get('/', (req, res) => {
 router.post('/quizes', upload.single('quiz'), (req, res) => {
   res.sendFile('question.html', {root: root});
 });
+router.get('/student', (req, res) => {
+    res.sendFile('question.html', {root: root});
+});
 router.get('/quizes', (req, res) => {
   res.json(quizrender());
 });
