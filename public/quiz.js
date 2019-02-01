@@ -10,16 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function cardsCreation(info) {
   for (let t = info.nTasks; t > 0; t--) {
-    document.body.innerHTML += `<div class="container">
+    document.body.innerHTML += `<div class="container center">
       <div class="row">
-        <div class="col s12 m5 l12">
+        <div class="col s12 m10">
           <div class="card-panel blue z-depth-3">
             <span class="prompting white-text center-align flow-text">
             </span>
-            <a class="btn waves-effect blue waves-light btn-large z-depth-3"></a>
-            <a class="btn waves-effect blue waves-light btn-large z-depth-3"></a>
-            <a class="btn waves-effect blue waves-light btn-large z-depth-3"></a>
-            <a class="btn waves-effect blue waves-light btn-large z-depth-3"></a>
+            <div class="divider blue"></div>
+            <div class="row">
+            <a class="btn waves-effect blue lighten-2 waves-light btn-large z-depth-3 col3"></a>
+                        <div class="divider blue"></div>
+            <a class="btn waves-effect blue lighten-2 waves-light btn-large z-depth-3 col3"></a>
+                        <div class="divider blue"></div>
+            <a class="btn waves-effect blue lighten-2 waves-light btn-large z-depth-3 col3"></a>
+                        <div class="divider blue"></div>
+            <a class="btn waves-effect blue lighten-2 waves-light btn-large z-depth-3 col3"></a>
+            </div>
           </div>
         </div>
       </div>
