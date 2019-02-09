@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const appRouter = require('./routes/routes.js');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 const usrPath = path.join(__dirname, 'public');
 const favicon = require('serve-favicon');
 
