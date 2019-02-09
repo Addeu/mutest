@@ -8,12 +8,15 @@ function renderQuiz() {
     const fOptionPattern = /[a-z||A-Z]\. .+/;
     const cOptionPattern = /[a-z||A-Z]\. .+!/;
     let wholeQuestion = textTorender.match(wholeQuestionPattern);
-    const questionJSONed =
-    {wholeQuestion: wholeQuestion,
-     prompt: function() {return this.wholeQuestion.match(promptPattern)},
-     fOptions: function() {return this.wholeQuestion.match(fOptionPattern)},
-     cOption: function() {return this.wholeQuestion.match(cOptionPattern)},
-    };
+    const questionJSONed = {};
+    for (let i = 0; i < wholeQuestion.length; i++) {
+      let question = [];
+      question[i] = {};
+      question[i]["prompt"] = textTorender.match(promptPattern);
+      question[i]["fOptions"] = textTorender.match(fOptionPattern);
+      question[i]["cOption"] = textTorender.match(cOptionPattern);
+      questionJSONed[i] = question[i];
+    }
     return questionJSONed;
   }
 }
