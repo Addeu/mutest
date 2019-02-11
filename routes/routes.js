@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const root = path.resolve(__dirname, "../public");
-const quizrender = require('../quizzzler.js');
+const quizrender = require('../quizzzler2.js');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
