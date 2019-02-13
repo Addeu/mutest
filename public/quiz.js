@@ -7,12 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPrompt(object);
     renderOptions(object);
     getCorrectOptions(object);
+    chargeButtons();
+    setCounter();
     console.log(object);
   });
 });
-
-let correctOptions = [];
-let btn = document.getElementsByClassName('btn');
 
 function cardsCreation(info) {
   for (let t = Object.keys(info).length; t > 0; t--) {
@@ -50,53 +49,35 @@ function renderOptions(info) {
   };
 };
 
+//extracts corret options and pushes into an array
+let correctOptions = [];
 function getCorrectOptions(info) {
   for (let i in info) {
     correctOptions.push(info[i].cOption.join(''));
   };
-  console.log(correctOptions);
   return correctOptions;
 };
 
-
-
-
-
-
-/* OLD RENDERING FUNCTION
-function cardsCreation(info) {
-  for (let t = info.nTasks; t > 0; t--) {
-    document.body.innerHTML += `<div class="container center">
-      <div class="row">
-        <div class="col s12 m10">
-          <div class="card-panel blue z-depth-3">
-            <span class="prompting white-text center-align flow-text">
-            </span>
-            <div class="divider blue"></div>
-            <div class="row">
-            <a class="btn waves-effect blue lighten-2 waves-light btn-large z-depth-3 col3"></a>
-                        <div class="divider blue"></div>
-            <a class="btn waves-effect blue lighten-2 waves-light btn-large z-depth-3 col3"></a>
-                        <div class="divider blue"></div>
-            <a class="btn waves-effect blue lighten-2 waves-light btn-large z-depth-3 col3"></a>
-                        <div class="divider blue"></div>
-            <a class="btn waves-effect blue lighten-2 waves-light btn-large z-depth-3 col3"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>`
+function chargeButtons() {
+  let btn = document.getElementsByClassName('btn');
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", isCorrect);
+    let toCheck = btn[i].innerHTML + '!';
+    function isCorrect() {
+        if (correctOptions.indexOf(toCheck) != -1) {
+          btn[i].classList.remove('blue');
+          btn[i].classList.add('green');
+          setCounter(1);
+        } else {
+          btn[i].classList.remove('blue');
+          btn[i].classList.add('red');
+        };
+    };
   };
 };
-
-function renderQuestion(info) {
-  const prompts = document.getElementsByClassName("prompting");
-  const options = document.getElementsByClassName('btn');
-  for (let j = 0; j < prompts.length; j++) {
-    prompts[j].innerHTML = info.question[j];
-  };
-  for(let i = 0; i < options.length; i++) {
-    options[i].innerHTML = info.fOptions[i];
-  };
+let result = 1;
+function setCounter(i) {
+  let counter = document.getElementById('counter');
+  if (i > 0) {result += 1} else {result -= 1};
+  counter.innerHTML = `${result}/${correctOptions.length}`;
 };
-*/
