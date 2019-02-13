@@ -1,6 +1,6 @@
 {
   "name": "mutest",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "web-application for ESL teachers",
   "main": "index.js",
   "scripts": {
