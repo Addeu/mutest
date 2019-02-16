@@ -75,9 +75,9 @@ function chargeButtons() {
     };
   };
 };
-let result = 1;
+let result = 0;
 function setCounter(i) {
   let counter = document.getElementById('counter');
-  if (i > 0) {result += 1} else {result -= 1};
+  if (i > 0) {result += 1};
   counter.innerHTML = `${result}/${correctOptions.length}`;
 };
