@@ -1,4 +1,9 @@
 * {
   margin: 5px auto;
   padding: 0;
+  font-size: xx-large;
+}
+
+.btn {
+  width: 100%;
 }

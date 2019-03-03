@@ -13,16 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+//To provide only one chance for answer a 'pure' class is added to the cards
+
 function cardsCreation(info) {
   for (let t = Object.keys(info).length; t > 0; t--) {
     document.body.innerHTML += `<div class="container center">
       <div class="row">
-        <div class="col s12 m10">
+        <div class="col s12">
           <div class="card-panel blue z-depth-3">
-            <span class="prompting white-text center-align flow-text">
+            <span class="prompting white-text center-align">
             </span>
             <div class="divider blue"></div>
-            <div class="row forOptions">
+            <div class="row forOptions pure">
             </div>
           </div>
         </div>
@@ -58,20 +61,31 @@ function getCorrectOptions(info) {
   return correctOptions;
 };
 
+/*
+1. Get list of all buttons
+2. add event listener onclick
+3. on click launch the function
+4. the function checks if such option exists (-1 means that there is no such option on array)
+5. 'Pure' check is to prevent two answerings
+*/
 function chargeButtons() {
   let btn = document.getElementsByClassName('btn');
   for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", isCorrect);
     let toCheck = btn[i].innerHTML + '!';
     function isCorrect() {
+      if (btn[i].parentElement.classList.contains('pure')) {
         if (correctOptions.indexOf(toCheck) != -1) {
           btn[i].classList.remove('blue');
           btn[i].classList.add('green');
+          btn[i].parentElement.classList.remove('pure');
           setCounter(1);
         } else {
           btn[i].classList.remove('blue');
           btn[i].classList.add('red');
+          btn[i].parentElement.classList.remove('pure');
         };
+      };
     };
   };
 };
