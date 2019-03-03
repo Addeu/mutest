@@ -78,7 +78,6 @@ function chargeButtons() {
         if (correctOptions.indexOf(toCheck) != -1) {
           btn[i].classList.remove('blue');
           btn[i].classList.add('green');
-          btn[i].parentElement.classList.remove('pure');
           setCounter(1);
         } else {
           btn[i].classList.remove('blue');
